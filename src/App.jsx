@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Navbar from './Components/NavBar/Navbar'
 import { FaBars } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
+import Fig from './Components/chart/Fig';
 
 
 
@@ -24,6 +25,8 @@ function App() {
         <Navbar menu={menu}> </Navbar>
         <h2 className='text-4xl font-bold'>AR</h2>
       </div>
+
+      <Fig></Fig>
     </>
   )
 }
