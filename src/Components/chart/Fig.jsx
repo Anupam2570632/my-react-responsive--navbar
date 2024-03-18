@@ -1,4 +1,4 @@
-import { LineChart, Line, XAxis, YAxis, Tooltip } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, BarChart, Bar } from 'recharts';
 
 const Fig = () => {
     const students = [
@@ -64,15 +64,26 @@ const Fig = () => {
         }
     ];
     return (
-        <div className='p-10 mx-auto w-full text-center flex items-center justify-center'>
+        <div className='p-10 space-y-10 mx-auto w-full text-center flex flex-col items-center justify-center'>
             <LineChart height={400} width={600} data={students}>
                 <Line type={'monotone'} dataKey={'physics'} stroke='red'></Line>
                 <Line type={'monotone'} dataKey={'chemistry'} stroke='green'>yellow</Line>
                 <Line type={'monotone'} dataKey={'math'} stroke='blue'></Line>
                 <XAxis dataKey={'name'}></XAxis>
                 <YAxis></YAxis>
+                <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+
                 <Tooltip></Tooltip>
             </LineChart>
+            <BarChart height={400} width={700} data={students}>
+                <XAxis dataKey={'name'}></XAxis>
+                <YAxis></YAxis>
+                <Tooltip></Tooltip>
+                <Bar dataKey="physics" fill="skyblue" />
+                <Bar dataKey="chemistry" fill="purple" />
+                <Bar dataKey="math" fill="gray" />
+
+            </BarChart>
         </div>
     );
 };
